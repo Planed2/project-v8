@@ -1,0 +1,186 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.5rem;
+  --primary: oklch(0.45 0.18 264);
+  --primary-foreground: oklch(0.98 0 0);
+  --background: oklch(0.965 0.003 264);
+  --foreground: oklch(0.18 0.01 264);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.01 264);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.01 264);
+  --secondary: oklch(0.96 0.003 264);
+  --secondary-foreground: oklch(0.35 0.01 264);
+  --muted: oklch(0.96 0.003 264);
+  --muted-foreground: oklch(0.52 0.01 264);
+  --accent: oklch(0.96 0.003 264);
+  --accent-foreground: oklch(0.18 0.01 264);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.9 0.005 264);
+  --input: oklch(0.9 0.005 264);
+  --ring: oklch(0.45 0.18 264);
+  --chart-1: oklch(0.72 0.16 50);
+  --chart-2: oklch(0.55 0.18 264);
+  --chart-3: oklch(0.55 0.18 300);
+  --chart-4: oklch(0.55 0.18 160);
+  --chart-5: oklch(0.55 0.18 20);
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.18 0.01 264);
+  --sidebar-primary: oklch(0.45 0.18 264);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.96 0.003 264);
+  --sidebar-accent-foreground: oklch(0.18 0.01 264);
+  --sidebar-border: oklch(0.9 0.005 264);
+  --sidebar-ring: oklch(0.45 0.18 264);
+
+  /* Status colors */
+  --status-pending: oklch(0.72 0.16 50);
+  --status-pending-bg: oklch(0.97 0.04 80);
+  --status-pending-text: oklch(0.45 0.14 50);
+  --status-notified: oklch(0.55 0.18 264);
+  --status-notified-bg: oklch(0.95 0.06 264);
+  --status-notified-text: oklch(0.35 0.18 264);
+  --status-active-search: oklch(0.55 0.18 300);
+  --status-active-search-bg: oklch(0.95 0.05 300);
+  --status-active-search-text: oklch(0.38 0.18 300);
+  --status-resolved: oklch(0.55 0.18 160);
+  --status-resolved-bg: oklch(0.95 0.05 160);
+  --status-resolved-text: oklch(0.35 0.18 160);
+  --status-violation: oklch(0.55 0.18 20);
+  --status-violation-bg: oklch(0.97 0.04 20);
+  --status-violation-text: oklch(0.4 0.18 20);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+
+  /* Status badge styles */
+  .badge-pending {
+    background-color: var(--status-pending-bg);
+    color: var(--status-pending-text);
+  }
+  .badge-notified {
+    background-color: var(--status-notified-bg);
+    color: var(--status-notified-text);
+  }
+  .badge-active-search {
+    background-color: var(--status-active-search-bg);
+    color: var(--status-active-search-text);
+  }
+  .badge-resolved {
+    background-color: var(--status-resolved-bg);
+    color: var(--status-resolved-text);
+  }
+  .badge-violation {
+    background-color: var(--status-violation-bg);
+    color: var(--status-violation-text);
+  }
+
+  /* Card entrance animation */
+  @keyframes card-enter {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-card-enter {
+    animation: card-enter 0.25s cubic-bezier(0.23, 1, 0.32, 1) both;
+  }
+}

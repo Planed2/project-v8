@@ -1,0 +1,257 @@
+/**
+ * Dados mock para o sistema de Infrequência Escolar — JF
+ * Simulação de ocorrências da Rede Municipal de Juiz de Fora
+ */
+
+import type { StatusType } from "@/components/StatusBadge";
+
+export interface Ocorrencia {
+  id: string;
+  aluno: string;
+  ano: string;
+  escola: string;
+  faltas: string;
+  status: StatusType;
+  dataRegistro: string;
+  responsavel?: string;
+  telefone?: string;
+  observacoes?: string;
+}
+
+export const ocorrencias: Ocorrencia[] = [
+  {
+    id: "OC-001",
+    aluno: "123",
+    ano: "2º Período",
+    escola: "E.M. 123",
+    faltas: "10 faltas alternadas",
+    status: "violacao",
+    dataRegistro: "2025-05-10",
+    responsavel: "Maria da Silva",
+    telefone: "(32) 99999-0001",
+    observacoes: "Aluno sem identificação completa. Aguardando documentação.",
+  },
+  {
+    id: "OC-002",
+    aluno: "Lucas Gabriel Santos",
+    ano: "9º Ano",
+    escola: "E.M. Padre Wilson",
+    faltas: "10 faltas alternadas",
+    status: "pendente",
+    dataRegistro: "2025-05-12",
+    responsavel: "Ana Santos",
+    telefone: "(32) 99999-0002",
+    observacoes: "Família contactada sem retorno.",
+  },
+  {
+    id: "OC-003",
+    aluno: "Sophia Martins Almeida",
+    ano: "6º Ano",
+    escola: "E.M. José Calil Ahouagi",
+    faltas: "5 faltas consecutivas",
+    status: "violacao",
+    dataRegistro: "2025-05-14",
+    responsavel: "Carlos Almeida",
+    telefone: "(32) 99999-0003",
+    observacoes: "Caso encaminhado ao Conselho Tutelar.",
+  },
+  {
+    id: "OC-004",
+    aluno: "Enzo Rafael Costa",
+    ano: "1º Ano",
+    escola: "E.M. Olavo Costa",
+    faltas: "5 faltas consecutivas",
+    status: "pendente",
+    dataRegistro: "2025-05-15",
+    responsavel: "Fernanda Costa",
+    telefone: "(32) 99999-0004",
+    observacoes: "Aguardando visita domiciliar.",
+  },
+  {
+    id: "OC-005",
+    aluno: "Helena Barbosa Dias",
+    ano: "1º Período",
+    escola: "E.M. Cândido Mota",
+    faltas: "10 faltas alternadas",
+    status: "pendente",
+    dataRegistro: "2025-05-16",
+    responsavel: "Roberto Dias",
+    telefone: "(32) 99999-0005",
+    observacoes: "Registro recente, aguardando ação.",
+  },
+  {
+    id: "OC-006",
+    aluno: "Mateus Oliveira Ferreira",
+    ano: "7º Ano",
+    escola: "E.M. Henrique Hallfeld",
+    faltas: "8 faltas alternadas",
+    status: "notificado",
+    dataRegistro: "2025-05-08",
+    responsavel: "Juliana Ferreira",
+    telefone: "(32) 99999-0006",
+    observacoes: "Notificação enviada ao Conselho Tutelar em 10/05.",
+  },
+  {
+    id: "OC-007",
+    aluno: "Isabela Rocha Mendes",
+    ano: "4º Ano",
+    escola: "E.M. Delfim Moreira",
+    faltas: "12 faltas alternadas",
+    status: "notificado",
+    dataRegistro: "2025-05-07",
+    responsavel: "Paulo Mendes",
+    telefone: "(32) 99999-0007",
+    observacoes: "CT notificado. Aguardando retorno.",
+  },
+  {
+    id: "OC-008",
+    aluno: "Gabriel Souza Lima",
+    ano: "8º Ano",
+    escola: "E.M. Presidente Itamar Franco",
+    faltas: "15 faltas alternadas",
+    status: "busca_ativa",
+    dataRegistro: "2025-04-28",
+    responsavel: "Cristina Lima",
+    telefone: "(32) 99999-0008",
+    observacoes: "Busca ativa iniciada. Família não localizada no endereço cadastrado.",
+  },
+  {
+    id: "OC-009",
+    aluno: "Valentina Castro Nunes",
+    ano: "5º Ano",
+    escola: "E.M. Assis Chateaubriand",
+    faltas: "7 faltas consecutivas",
+    status: "busca_ativa",
+    dataRegistro: "2025-04-30",
+    responsavel: "Marcos Nunes",
+    telefone: "(32) 99999-0009",
+    observacoes: "Visita domiciliar realizada sem sucesso.",
+  },
+  {
+    id: "OC-010",
+    aluno: "Arthur Pereira Gomes",
+    ano: "3º Ano",
+    escola: "E.M. Coronel Pacheco",
+    faltas: "6 faltas consecutivas",
+    status: "busca_ativa",
+    dataRegistro: "2025-05-02",
+    responsavel: "Silvia Gomes",
+    telefone: "(32) 99999-0010",
+    observacoes: "Segunda visita agendada.",
+  },
+  {
+    id: "OC-011",
+    aluno: "Larissa Teixeira Campos",
+    ano: "2º Ano",
+    escola: "E.M. Padre Wilson",
+    faltas: "9 faltas alternadas",
+    status: "busca_ativa",
+    dataRegistro: "2025-05-03",
+    responsavel: "Eduardo Campos",
+    telefone: "(32) 99999-0011",
+    observacoes: "Em processo de busca ativa.",
+  },
+  {
+    id: "OC-012",
+    aluno: "Pedro Henrique Vieira",
+    ano: "6º Ano",
+    escola: "E.M. José Calil Ahouagi",
+    faltas: "11 faltas alternadas",
+    status: "resolvido",
+    dataRegistro: "2025-04-15",
+    responsavel: "Luciana Vieira",
+    telefone: "(32) 99999-0012",
+    observacoes: "Aluno retornou às aulas. Caso encerrado.",
+  },
+  {
+    id: "OC-013",
+    aluno: "Camila Rodrigues Pinto",
+    ano: "7º Ano",
+    escola: "E.M. Olavo Costa",
+    faltas: "8 faltas consecutivas",
+    status: "resolvido",
+    dataRegistro: "2025-04-18",
+    responsavel: "André Pinto",
+    telefone: "(32) 99999-0013",
+    observacoes: "Família compareceu à escola. Problema de saúde justificado.",
+  },
+  {
+    id: "OC-014",
+    aluno: "Nicolas Barbosa Faria",
+    ano: "9º Ano",
+    escola: "E.M. Cândido Mota",
+    faltas: "13 faltas alternadas",
+    status: "resolvido",
+    dataRegistro: "2025-04-20",
+    responsavel: "Tatiana Faria",
+    telefone: "(32) 99999-0014",
+    observacoes: "Transferência para outra escola confirmada.",
+  },
+  {
+    id: "OC-015",
+    aluno: "Beatriz Alves Correia",
+    ano: "5º Ano",
+    escola: "E.M. Henrique Hallfeld",
+    faltas: "6 faltas alternadas",
+    status: "resolvido",
+    dataRegistro: "2025-04-22",
+    responsavel: "Renato Correia",
+    telefone: "(32) 99999-0015",
+    observacoes: "Situação regularizada. Aluno frequente.",
+  },
+  {
+    id: "OC-016",
+    aluno: "Felipe Nascimento Cardoso",
+    ano: "4º Ano",
+    escola: "E.M. Delfim Moreira",
+    faltas: "10 faltas alternadas",
+    status: "resolvido",
+    dataRegistro: "2025-04-25",
+    responsavel: "Vanessa Cardoso",
+    telefone: "(32) 99999-0016",
+    observacoes: "Caso resolvido após mediação escolar.",
+  },
+  {
+    id: "OC-017",
+    aluno: "Giovanna Monteiro Leal",
+    ano: "8º Ano",
+    escola: "E.M. Presidente Itamar Franco",
+    faltas: "7 faltas consecutivas",
+    status: "resolvido",
+    dataRegistro: "2025-04-27",
+    responsavel: "Fábio Leal",
+    telefone: "(32) 99999-0017",
+    observacoes: "Retorno confirmado. Acompanhamento mensal.",
+  },
+  {
+    id: "OC-018",
+    aluno: "Rafael Duarte Moraes",
+    ano: "3º Ano",
+    escola: "E.M. Assis Chateaubriand",
+    faltas: "5 faltas consecutivas",
+    status: "resolvido",
+    dataRegistro: "2025-04-29",
+    responsavel: "Priscila Moraes",
+    telefone: "(32) 99999-0018",
+    observacoes: "Problema familiar resolvido.",
+  },
+];
+
+export const metricas = {
+  pendentes: ocorrencias.filter((o) => o.status === "pendente").length,
+  notificados: ocorrencias.filter((o) => o.status === "notificado").length,
+  buscaAtiva: ocorrencias.filter((o) => o.status === "busca_ativa").length,
+  resolvidos: ocorrencias.filter((o) => o.status === "resolvido").length,
+  violacoes: ocorrencias.filter((o) => o.status === "violacao").length,
+};
+
+export const distribuicaoStatus = [
+  { name: "Pendente", value: metricas.pendentes, color: "#F59E0B" },
+  { name: "Notificado ao CT", value: metricas.notificados, color: "#3B82F6" },
+  { name: "Em busca ativa", value: metricas.buscaAtiva, color: "#8B5CF6" },
+  { name: "Resolvido", value: metricas.resolvidos, color: "#10B981" },
+];
+
+export const ocorrenciasPendentes = ocorrencias.filter(
+  (o) => o.status === "pendente" || o.status === "violacao"
+);

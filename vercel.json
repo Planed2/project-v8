@@ -1,0 +1,15 @@
+{
+  "buildCommand": "vite build",
+  "outputDirectory": "dist/public",
+  "installCommand": "npm install --legacy-peer-deps",
+  "framework": null,
+  "functions": {
+    "api/trpc/[trpc].ts": {
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    { "source": "/api/trpc/:path*", "destination": "/api/trpc/[trpc]" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ]
+}
